@@ -1,7 +1,5 @@
 package huffman;
 
-import huffman.tree.Branch;
-import huffman.tree.Leaf;
 import huffman.tree.Node;
 
 import java.util.*;
@@ -18,19 +16,7 @@ public class Huffman {
      * @return          The frequency table.
      */
     public static Map<Character, Integer> freqTable (String input) {
-        if (input == null || input.isEmpty()) {
-            return null;
-        } else {
-            Map<Character, Integer> ft = new HashMap<>();
-            for (char c : input.toCharArray()) {
-                if (ft.containsKey(c)) {
-                    ft.put(c, ft.get(c) + 1);
-                } else {
-                    ft.put(c, 1);
-                }
-            }
-            return ft;
-        }
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     /**
@@ -41,7 +27,7 @@ public class Huffman {
      * Then make every entry in the frequency table into a leaf node and add it to the queue.
      *
      * Then, take the first two nodes from the queue and combine them in a branch node that is
-     * labelled by the combined frequency of the nodes and put it back in the queue. The right-hand
+     * labelled by the combined frequency of the nodes and put it back in the queue. The right hand
      * child of the new branch node should be the node with the larger frequency of the two.
      *
      * Do this repeatedly until there is a single node in the queue, which is the Huffman tree.
@@ -50,27 +36,7 @@ public class Huffman {
      * @return          A Huffman tree.
      */
     public static Node treeFromFreqTable(Map<Character, Integer> freqTable) {
-        if (freqTable == null || freqTable.isEmpty()) {
-            return null;
-        }
-
-        PQueue pq = new PQueue();
-        freqTable.forEach(((character, integer) -> {
-            pq.enqueue(new Leaf(character, integer));
-        }));
-
-        for (int i = 0; i < freqTable.size(); i++) {
-            Node leftChild = pq.dequeue();
-            Node rightChild = pq.dequeue();
-            Node node;
-            if (rightChild != null) {
-                node = new Branch(leftChild.getFreq() + rightChild.getFreq(), leftChild, rightChild);
-            } else {
-                node = leftChild;
-            }
-            pq.enqueue(node);
-        }
-        return pq.dequeue();
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     /**
@@ -82,8 +48,7 @@ public class Huffman {
      *              representing the path through the tree from the root to the leaf node labelled c.
      */
     public static Map<Character, List<Boolean>> buildCode(Node tree) {
-        ArrayList<Boolean> codeMap = new ArrayList<>();
-        return tree.traverse(codeMap);
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     /**
@@ -100,14 +65,7 @@ public class Huffman {
      * @return      The Huffman coding.
      */
     public static HuffmanCoding encode(String input) {
-        Map<Character, List<Boolean>> tree = buildCode(treeFromFreqTable(freqTable(input)));
-        ArrayList<Boolean> dataList = new ArrayList<>();
-
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
-            dataList.addAll(tree.get(c));
-        }
-        return new HuffmanCoding(tree, dataList);
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     /**
@@ -120,7 +78,7 @@ public class Huffman {
      * a local variable referring to the root of the tree. For every boolean, b, in bs, if b is false you want to "go
      * left" in the tree, otherwise "go right".
      *
-     * Presume b is false, so you want to go left. So long as you are not at the end of the code, so you should set the
+     * Presume b is false, so you want to go left. So long as you are not at the end of the code so you should set the
      * current node to be the left-hand child of the node you are currently on. If that child does not
      * yet exist (i.e. it is null) you need to add a new branch node there first. Then carry on with the next entry in
      * bs. Reverse the logic of this if b is true.
@@ -133,33 +91,7 @@ public class Huffman {
      * @return      The reconstructed tree.
      */
     public static Node treeFromCode(Map<Character, List<Boolean>> code) {
-        Branch root = new Branch(0, null, null);
-
-        for (char c : code.keySet()) {
-            Node current = root;
-            Iterator<Boolean> boolIterator = code.get(c).iterator();
-
-            // Used Iterator.hasNext() for readability
-            while (boolIterator.hasNext()) {
-                Boolean currentBool = boolIterator.next();
-                if (!currentBool) {
-                    if (!boolIterator.hasNext()) {                  // If current boolean is false and the last
-                        ((Branch) current).setLeft(new Leaf(c, 0));
-                    } else if (((Branch) current).getLeft() == null) {
-                        ((Branch) current).setLeft(new Branch(0, null, null));
-                    }
-                    current = ((Branch) current).getLeft();
-                } else {
-                    if (!boolIterator.hasNext()) {                  // If current boolean is true and the last
-                        ((Branch) current).setRight(new Leaf(c, 0));
-                    } else if (((Branch) current).getRight() == null) {
-                        ((Branch) current).setRight(new Branch(0, null, null));
-                    }
-                    current = ((Branch) current).getRight();
-                }
-            }
-        }
-        return root;
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
 
@@ -175,24 +107,6 @@ public class Huffman {
      * @return      The decoded string.
      */
     public static String decode(Map<Character, List<Boolean>> code, List<Boolean> data) {
-        Node root = treeFromCode(code);
-        Node currentNode = root;
-
-        // Faster performance for concatenating Strings
-        StringBuilder result = new StringBuilder();
-
-        for (Boolean currentBool : data) {
-            if (!currentBool) {
-                currentNode = ((Branch) currentNode).getLeft();
-            } else {
-                currentNode = ((Branch) currentNode).getRight();
-            }
-
-            if (currentNode instanceof Leaf) {
-                result.append(((Leaf) currentNode).getLabel());
-                currentNode = root;
-            }
-        }
-        return result.toString();
+        throw new UnsupportedOperationException("Method not implemented");
     }
 }

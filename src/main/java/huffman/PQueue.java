@@ -19,18 +19,10 @@ public class PQueue {
     /**
      * Add a node to the queue. The new node should be inserted at the point where the frequency of next node is
      * greater than or equal to that of the new one.
-     * @param n The node to enqueue (add to the queue).
+     * @param n The node to enqueue.
      */
     public void enqueue(Node n) {
-        for (int i = 0; i < queue.size(); i++) {
-            if (n.getFreq() <= queue.get(i).getFreq()) {
-                queue.add(i, n);
-                return;
-            }
-        }
-
-        // Not added yet so add it to the queue
-        queue.add(n);
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     /**
@@ -38,7 +30,7 @@ public class PQueue {
      * @return  The first node in the queue.
      */
     public Node dequeue() {
-        return queue.isEmpty() ? null : queue.remove(0);
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     /**
@@ -46,6 +38,6 @@ public class PQueue {
      * @return  Size of the queue.
      */
     public int size() {
-        return queue.size();
+        throw new UnsupportedOperationException("Method not implemented");
     }
 }

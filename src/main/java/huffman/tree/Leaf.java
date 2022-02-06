@@ -1,6 +1,5 @@
 package huffman.tree;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 /**
@@ -38,8 +37,6 @@ public class Leaf extends Node {
      */
     @Override
     public Map<Character, List<Boolean>> traverse(List<Boolean> list) {
-        Map<Character, List<Boolean>> characterListMap = new HashMap<>();
-        characterListMap.put(label, list);
-        return characterListMap;
+        throw new UnsupportedOperationException("Method not implemented");
     }
 }

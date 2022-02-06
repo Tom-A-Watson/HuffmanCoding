@@ -1,7 +1,5 @@
 package huffman.tree;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 /**
@@ -33,19 +31,7 @@ public class Branch extends Node {
      * @return the map of characters and paths
      */
     public Map<Character, List<Boolean>> traverse(List<Boolean> list) {
-        Map<Character, List<Boolean>> charCodeMap = new HashMap<>();
-        if (this.left != null) {
-            ArrayList<Boolean> leftList = new ArrayList<>(list);
-            leftList.add(false);
-            charCodeMap.putAll(this.left.traverse(leftList));
-        }
-
-        if (this.right != null) {
-            ArrayList<Boolean> rightList = new ArrayList<>(list);
-            rightList.add(true);
-            charCodeMap.putAll(this.right.traverse(rightList));
-        }
-        return charCodeMap;
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     public Node getLeft() {
