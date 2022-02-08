@@ -1,10 +1,12 @@
 # Huffman coding
 
-In this assignment you will implement the *Huffman coding*. This is a
-very elegant and simple but powerful compression algorithm. The idea
-is to generate a binary sequence that represents each character
-required. This might be the English alphabet, some subset of that, or
-any collection of symbols.
+In the *first* semester of my *second* year of university, I was given an assignment called '**Huffman Coding**', which determined my entire grade for the module 'Data Structures and Operating Systems'. The requirement was to implement methods in a Java-representation of a binary tree called a '**Huffman Tree**'. Some of the basic code, such as classes, getters, setters and toString methods were pre-written to act as resources for solving the assignment, however, the meat of the algorithm was left to us students in this instance. This 'meat' comprised of **11** methods split into **8** different JUnit tests (some tested the functionality of multiple methods), and we were allocated two and a half months to get all 8 tests to pass. The instructions below specify how to solve the Huffman Coding algorithm, and include an example of a use-case along with a walk-through of how the algorithm works.
+
+Feel free to download the project and attempt solving it yourself! 🙃
+
+If you feel inclined to do so, don't hesitate to download the solution code from the [solution branch](https://github.com/SigherWolf/HuffmanCoding/tree/solution).
+
+## Example & Walk-through
 
 Say we have a 100KB file made up of repetitions of the letters 'a' to 'f'.
 We start by creating a frequency table:
@@ -49,7 +51,7 @@ to a new branch node. The new node is labelled by the sum of the frequency label
     - When there is only one item in the queue, that's the Huffman
 tree.
 
-## Problems
+## Instructions
 
 Before starting the work you should read and understand the code provided. Pay
 attention to the code in the package `huffman.tree`. This code represents a binary 
