@@ -6,6 +6,10 @@ Feel free to download the project and attempt solving it yourself! 🙃
 
 If you feel inclined to do so, don't hesitate to download the solution code from the [solution branch](https://github.com/SigherWolf/HuffmanCoding/tree/solution).
 
+<p align="center"><b>╭══• ೋ•✧๑♡๑✧•ೋ •══╮</b></p>
+<p align="center">Score for this assignment: <b>75%</b></p>
+<p align="center"><b>╰══• ೋ•✧๑♡๑✧•ೋ •══╯</b></p>
+
 ## Example & Walk-through
 
 Say we have a 100KB file made up of repetitions of the letters 'a' to 'f'.
